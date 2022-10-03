@@ -3,7 +3,7 @@ resource "aws_instance" "web" {
   instance_type   = "t2.micro"
   key_name        = aws_key_pair.generated_key.key_name
   security_groups = ["web_ssh"]
-  user_data = file("script.sh")
+  user_data = file("script.bash")
   tags = {
     Name = "nginxphp"
   }
