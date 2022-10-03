@@ -2,3 +2,7 @@
 *.hcl
 .terraform
 *.tfstate
+*.tfstate.*
+*.log
+*.mod
+*.sum
