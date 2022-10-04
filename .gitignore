@@ -6,3 +6,4 @@
 *.log
 *.mod
 *.sum
+*.tfstate.backup
