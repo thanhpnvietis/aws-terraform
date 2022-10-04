@@ -1,5 +1,5 @@
-resource "aws_iam_role" "EC2_S3_RDS" {
-  name = "EC2_S3_RDS"
+resource "aws_iam_role" "EC2_S3_RDS_bai2" {
+  name = "EC2_S3_RDS_bai2"
 
   assume_role_policy = file("assume_role.json")
   //Bổ xung thêm 2 policy có sẵn là AmazonS3FullAccess và AmazonRDSFullAccess

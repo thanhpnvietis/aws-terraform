@@ -1,6 +1,6 @@
-resource "aws_iam_instance_profile" "s3_rds_profile" {
+resource "aws_iam_instance_profile" "s3_rds_profile_bai2" {
   name = "S3_RDS_Profile_bai2"
-  role = aws_iam_role.EC2_S3_RDS.name
+  role = aws_iam_role.EC2_S3_RDS_bai2.name
 }
 
 
@@ -9,10 +9,10 @@ resource "aws_instance" "web_golang" {
   instance_type   = "t2.micro"
   key_name        = aws_key_pair.generated_key.key_name
   security_groups = ["web_golang"]
-  iam_instance_profile = aws_iam_instance_profile.s3_rds_profile.name
+  iam_instance_profile = aws_iam_instance_profile.s3_rds_profile_bai2.name
   user_data = file("script.bash")
   tags = {
-    Name = "golang"
+    Name = "golang bai 2"
   }
 
   //Copy folder travel vào thư mục /home/ec2-user/
