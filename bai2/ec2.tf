@@ -1,5 +1,5 @@
 resource "aws_iam_instance_profile" "s3_rds_profile" {
-  name = "S3_RDS_Profile"
+  name = "S3_RDS_Profile_bai2"
   role = aws_iam_role.EC2_S3_RDS.name
 }
 
