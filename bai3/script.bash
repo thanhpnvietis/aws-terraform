@@ -16,14 +16,13 @@ Content-Type: text/x-shellscript; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="userdata.txt"
- 
+
 #!/bin/bash
-sudo su
-chmod 777 /home/ec2-user/uploads3/uploads3
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-. ~/.nvm/nvm.sh
-nvm install --lts
-npm i -g pm2
-pm2 start /home/ec2-user/uploads3/uploads3
+
+echo "<h1>Auto Scaling Configuration Using Launch Template </h1>" > index.html
+echo "version: v1" >> index.html
+echo "Host name:<b> " $HOSTNAME  "</b><br>" >> index.html
+echo "Instance id:<b> " `wget -q -O - http://169.254.169.254/latest/meta-data/instance-id` "</b><br>" >> index.html
+echo "Avalibility Zone: <b>" `wget -q -O - http://169.254.169.254/latest/meta-data/placement/availability-zone` "</b><br>" >> index.html
+
+python3 -m http.server 80
