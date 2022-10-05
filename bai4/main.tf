@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "thanhpn"
+    organization = "thanhpn-org"
 
     workspaces {
       name = "bai4"
